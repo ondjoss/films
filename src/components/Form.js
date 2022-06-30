@@ -1,8 +1,15 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect } from 'react';
 
 
 
 const Form = () => {
+
+    useEffect(() => {
+        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=1b53a67abc248fbeb4ccccf2044cb1a3&query=start&language=fr-FR`
+        ).then((res) => console.log(res.data.results));
+    }, []);
+
     return (
         <div className="form-component">
             <div className="form-container">
