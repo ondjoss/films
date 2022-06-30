@@ -1,13 +1,16 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import Card from './Card';
 
 
 
 const Form = () => {
 
+    const [filmData, setFilmData] = useState([]);
+
     useEffect(() => {
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=1b53a67abc248fbeb4ccccf2044cb1a3&query=start&language=fr-FR`
-        ).then((res) => console.log(res.data.results));
+        ).then((res) => setFilmData(res.data.results));
     }, []);
 
     return (
@@ -23,7 +26,9 @@ const Form = () => {
                     <div className="btn-sort" id='badToGood'>Flop<span>➜</span></div>
                 </div>
             </div>
-            <div className="result"></div>
+            <div className="result">
+                <Card/>
+            </div>
         </div>
     );
 };
