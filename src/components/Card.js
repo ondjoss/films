@@ -9,6 +9,7 @@ const Card = ({film}) => {
             ? "https://image.tmdb.org/t/p/w500/" + film.poster_path 
             : "./img/poster.jpg"} alt="Affiche films" />
             <h2>{film.title}</h2> 
+            {film.release_date ? <h5>sorti le : {film.release_date}</h5> : ""}
         </div>
     );
 };
