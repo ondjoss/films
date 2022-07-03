@@ -15,6 +15,7 @@ const Card = ({film}) => {
             : "./img/poster.jpg"} alt="Affiche films" />
             <h2>{film.title}</h2> 
             {film.release_date ? <h5>sorti le : {dateFormater(film.release_date)}</h5> : ""}
+            <h4>{film.vote_average}/10 <span>⭐</span></h4>
         </div>
     );
 };
