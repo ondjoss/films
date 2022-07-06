@@ -92,6 +92,8 @@ const Card = ({film}) => {
             <h4>{film.vote_average}/10 <span>⭐</span></h4>
 
             <ul>{genreFinder()}</ul>
+            {film.overview ? <h3>Synopsis</h3> : ""}
+           <p> {film.overview}</p>
         </div>
     );
 };
