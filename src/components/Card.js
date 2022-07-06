@@ -94,6 +94,8 @@ const Card = ({film}) => {
             <ul>{genreFinder()}</ul>
             {film.overview ? <h3>Synopsis</h3> : ""}
            <p> {film.overview}</p>
+
+           <div className="btn">Ajouter aux favvoris</div>
         </div>
     );
 };
