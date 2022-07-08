@@ -81,6 +81,14 @@ const Card = ({film}) => {
         
     };
 
+    const addStorage = () => {
+      let storeData = window.localStorage.films ? window.localStorage.films.split(",") : [];
+
+      if(!storeData.includes(film.id.toString())){
+        storeData.push(film.id);
+        window.localStorage.films = storeData;
+      }
+    };
 
     return (
         <div className='card'>
@@ -95,7 +103,7 @@ const Card = ({film}) => {
             {film.overview ? <h3>Synopsis</h3> : ""}
            <p> {film.overview}</p>
 
-           <div className="btn">Ajouter aux favvoris</div>
+           <div className="btn" onClick={() => addStorage()}>Ajouter aux favvoris</div>
         </div>
     );
 };
