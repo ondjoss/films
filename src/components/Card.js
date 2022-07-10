@@ -104,7 +104,8 @@ const Card = ({film}) => {
             {film.overview ? <h3>Synopsis</h3> : ""}
            <p> {film.overview}</p>
 
-           <div className="btn" onClick={() => addStorage()}>Ajouter aux favvoris</div>
+           {film.genre_ids ? (<div className="btn" onClick={() => addStorage()}>Ajouter aux favvoris</div>) : <div className='btn'>Supprimer des favoris</div>}
+
         </div>
     );
 };
