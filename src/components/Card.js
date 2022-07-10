@@ -99,7 +99,8 @@ const Card = ({film}) => {
             {film.release_date ? <h5>sorti le : {dateFormater(film.release_date)}</h5> : ""}
             <h4>{film.vote_average}/10 <span>⭐</span></h4>
 
-            <ul>{genreFinder()}</ul>
+            <ul>{film.genre_ids ? genreFinder() : film.genres.map((genre, index) => (<li key={index}>{genre.name}</li>))}</ul>
+
             {film.overview ? <h3>Synopsis</h3> : ""}
            <p> {film.overview}</p>
 
